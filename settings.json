@@ -7,11 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
   "theme": "One Dark",
   "buffer_font_size": 14,
   "buffer_font_features": {
     "calt": true,
     "liga": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 15000
+    }
   },
   "buffer_font_family": "Fira Code",
   "vim_mode": true,
@@ -20,6 +29,7 @@
     "font_family": "FiraCode Nerd Font Mono",
     "blinking": "off"
   },
+  "default_dock_anchor": "expanded",
   "language_overrides": {
     "JavaScript": {
       "command": "prettier",
