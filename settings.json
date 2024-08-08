@@ -7,9 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "right"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "sidebar": {
+    "show_hidden_files": true
   },
   "theme": {
     "light": "One Dark",
