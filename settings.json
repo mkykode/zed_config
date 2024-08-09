@@ -7,18 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-sonnet-20240620"
-    },
-    "version": "2"
-  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "One Dark",
+  "theme": {
+    "light": "One Dark",
+    "dark": "One Dark"
+  },
   "buffer_font_size": 14,
   "buffer_font_features": {
     "calt": true,
@@ -29,56 +25,50 @@
       "milliseconds": 15000
     }
   },
-  "buffer_font_family": "Fira Code",
+  "buffer_font_family": "Monaspace Neon Var",
+  "ui_font_family": "Monaspace Neon Var",
   "vim_mode": true,
+  "vim": {
+    "use_multiline_find": true
+  },
+  "vertical_scroll_margin": 0,
+  "command_aliases": {
+    "W": "w",
+    "Wq": "wq",
+    "Q": "q"
+  },
+  "ui_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "relative_line_numbers": true,
+  "project_panel": {
+    "dock": "right"
+  },
+  "auto_update": true,
+  "auto_save": "on",
   "soft_wrap": "preferred_line_length",
   "terminal": {
-    "font_family": "FiraCode Nerd Font Mono",
-    "blinking": "off"
+    "font_family": "MesloLGL Nerd Font",
+    "font_size": 13
   },
   "default_dock_anchor": "expanded",
-  "language_overrides": {
-    "JavaScript": {
-      "command": "prettier",
-      "arguments": [
-        "--stdin-filepath",
-        "{buffer_path}"
-      ]
+  "language_models": {
+    "anthropic": {
+      "version": "1"
     },
-    "TypeScript": {
-      "command": "prettier",
-      "arguments": [
-        "--stdin-filepath",
-        "{buffer_path}"
-      ]
-    },
-    "PHP": {
-      "command": "php-cs-fixer",
-      "arguments": [
-        "fix",
-        "{buffer_path}"
-      ]
-    },
-    "CSS": {
-      "command": "prettier",
-      "arguments": [
-        "--stdin-filepath",
-        "{buffer_path}"
-      ]
-    },
-    "SCSS": {
-      "command": "prettier",
-      "arguments": [
-        "--stdin-filepath",
-        "{buffer_path}"
-      ]
-    },
-    "JSON": {
-      "command": "prettier",
-      "arguments": [
-        "--stdin-filepath",
-        "{buffer_path}"
-      ]
+    "openai": {
+      "version": "1"
     }
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-1.5-pro"
+    },
+    "version": "2"
+  },
+  "prettier": {
+    "allowed": true
   }
 }
