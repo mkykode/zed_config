@@ -15,8 +15,8 @@
     "show_hidden_files": true
   },
   "theme": {
-    "light": "One Dark",
-    "dark": "One Dark"
+    "light": "One Dark Pro",
+    "dark": "One Dark Pro"
   },
   "buffer_font_size": 14,
   "buffer_font_features": {
@@ -32,7 +32,9 @@
   "ui_font_family": "Monaspace Neon Var",
   "vim_mode": true,
   "vim": {
-    "use_multiline_find": true
+    "toggle_relative_line_numbers": false,
+    "use_multiline_find": true,
+    "use_system_clipboard": "always"
   },
   "vertical_scroll_margin": 0,
   "command_aliases": {
@@ -50,28 +52,77 @@
   },
   "auto_update": true,
   "auto_save": "on",
-  "soft_wrap": "preferred_line_length",
   "terminal": {
-    "font_family": "MesloLGL Nerd Font",
+    "font_family": "MesloLGS NF",
     "font_size": 13
   },
   "default_dock_anchor": "expanded",
-  "language_models": {
-    "anthropic": {
-      "version": "1"
-    },
-    "openai": {
-      "version": "1"
-    }
-  },
   "assistant": {
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-sonnet-20240620"
+      "provider": "openai",
+      "model": "o1-mini"
     },
     "version": "2"
   },
+  "language_models": {
+    "google": {
+      "version": "1",
+      "available_models": [
+        {
+          "name": "gemini-exp-1121",
+          "display_name": "Gemini EXP 1121",
+          "max_tokens": 32768
+        }
+      ]
+    }
+  },
+  "formatter": "prettier",
+  "format_on_save": "on",
+  "soft_wrap": "preferred_line_length",
+  // The column at which to soft-wrap lines, for buffers where soft-wrap
+  // is enabled.
+  // "preferred_line_length": 100, // You can set this to 120 if you prefer
+  // Whether to show wrap guides (vertical rulers) in the editor.
+  // Setting this to true will show a guide at the 'preferred_line_length' value
+  // if softwrap is set to 'preferred_line_length', and will show any
+  // additional guides as specified by the 'wrap_guides' setting.
+  "show_wrap_guides": true,
+  // Character counts at which to show wrap guides in the editor.
+  "wrap_guides": [100, 120],
   "prettier": {
     "allowed": true
+  },
+  "tabs": {
+    "file_icons": true
+  },
+  "languages": {
+    "PHP": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}", "--parser", "php"]
+        }
+      }
+    },
+    "Rust": {
+      "formatter": {
+        "external": {
+          "command": "rustfmt",
+          "arguments": ["--emit", "stdout"]
+        }
+      }
+    }
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.5
+  },
+  "auto_indent_on_paste": false,
+  "slash_commands": {
+    "docs": {
+      "enabled": true
+    }
+  },
+  "preview_tabs": {
+    "enabled": true
   }
 }
