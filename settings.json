@@ -25,7 +25,7 @@
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 15000
+      "milliseconds": 200
     }
   },
   "buffer_font_family": "Monaspace Neon Var",
@@ -59,8 +59,8 @@
   "default_dock_anchor": "expanded",
   "assistant": {
     "default_model": {
-      "provider": "openai",
-      "model": "o1-mini"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
@@ -69,9 +69,19 @@
       "version": "1",
       "available_models": [
         {
-          "name": "gemini-exp-1121",
-          "display_name": "Gemini EXP 1121",
-          "max_tokens": 32768
+          "name": "gemini-2.0-flash-exp",
+          "display_name": "Gemini Flash 2.0 exp",
+          "max_tokens": 1048576
+        },
+        {
+          "name": "gemini-1.5-pro",
+          "display_name": "Gemini Flash 1.5 Pro",
+          "max_tokens": 2000000
+        },
+        {
+          "name": "gemini-exp-1206",
+          "display_name": "Gemini EXP 1206",
+          "max_tokens": 2097152
         }
       ]
     }
