@@ -23,11 +23,7 @@
     "calt": true,
     "liga": true
   },
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 200
-    }
-  },
+  "autosave": "on_focus_change",
   "buffer_font_family": "Monaspace Neon Var",
   "ui_font_family": "Monaspace Neon Var",
   "vim_mode": true,
@@ -59,8 +55,8 @@
   "default_dock_anchor": "expanded",
   "assistant": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "google",
+      "model": "gemini-2.0-flash-thinking-exp-01-21"
     },
     "version": "2"
   },
@@ -84,15 +80,15 @@
           "max_tokens": 2097152
         },
         {
-          "name": "gemini-2.0-flash-thinking-exp-1219",
-          "display_name": "Gemini Flash 2.0 Thinking exp",
-          "max_tokens": 32767
+          "name": "gemini-2.0-flash-thinking-exp-01-21",
+          "display_name": "Gemini Flash Thinking",
+          "max_tokens": 1048576
         }
       ]
     }
   },
   "formatter": "prettier",
-  "format_on_save": "on",
+  "format_on_save": "prettier",
   "soft_wrap": "preferred_line_length",
   // The column at which to soft-wrap lines, for buffers where soft-wrap
   // is enabled.
