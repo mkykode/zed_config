@@ -1,12 +1,7 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -18,7 +13,7 @@
     "light": "One Dark Pro",
     "dark": "One Dark Pro"
   },
-  "buffer_font_size": 14,
+  "buffer_font_size": 18.0,
   "buffer_font_features": {
     "calt": true,
     "liga": true
@@ -32,7 +27,6 @@
     "use_multiline_find": true,
     "use_system_clipboard": "always"
   },
-  "vertical_scroll_margin": 0,
   "command_aliases": {
     "W": "w",
     "Wq": "wq",
@@ -50,13 +44,13 @@
   "auto_save": "on",
   "terminal": {
     "font_family": "MesloLGS NF",
-    "font_size": 13
+    "font_size": 18
   },
   "default_dock_anchor": "expanded",
   "assistant": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.0-flash-thinking-exp-01-21"
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -87,26 +81,59 @@
       ]
     }
   },
-  "formatter": "prettier",
-  "format_on_save": "prettier",
+  "format_on_save": "on",
   "soft_wrap": "preferred_line_length",
-  // The column at which to soft-wrap lines, for buffers where soft-wrap
-  // is enabled.
-  // "preferred_line_length": 100, // You can set this to 120 if you prefer
-  // Whether to show wrap guides (vertical rulers) in the editor.
-  // Setting this to true will show a guide at the 'preferred_line_length' value
-  // if softwrap is set to 'preferred_line_length', and will show any
-  // additional guides as specified by the 'wrap_guides' setting.
   "show_wrap_guides": true,
-  // Character counts at which to show wrap guides in the editor.
   "wrap_guides": [100, 120],
-  "prettier": {
-    "allowed": true
-  },
   "tabs": {
     "file_icons": true
   },
+  "lsp": {
+    "solargraph": {
+      "settings": {
+        "use_bundler": false
+      },
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": true
+      }
+    }
+  },
   "languages": {
+    "JavaScript": {
+      "formatter": "prettier"
+    },
+    "TypeScript": {
+      "formatter": "prettier"
+    },
+    "JSX": {
+      "formatter": "prettier"
+    },
+    "TSX": {
+      "formatter": "prettier"
+    },
+    "CSS": {
+      "formatter": "prettier"
+    },
+    "SCSS": {
+      "formatter": "prettier"
+    },
+    "HTML": {
+      "formatter": "prettier"
+    },
+    "JSON": {
+      "formatter": "prettier"
+    },
+    "YAML": {
+      "formatter": "prettier"
+    },
+    "Markdown": {
+      "formatter": "prettier"
+    },
+    "Ruby": {
+      "language_servers": ["solargraph", "!ruby-lsp", "!rubocop"],
+      "formatter": "language_server"
+    },
     "PHP": {
       "formatter": {
         "external": {
@@ -122,6 +149,9 @@
           "arguments": ["--emit", "stdout"]
         }
       }
+    },
+    "Liquid": {
+      "formatter": "prettier"
     }
   },
   "active_pane_modifiers": {
