@@ -13,7 +13,7 @@
     "light": "One Dark Pro",
     "dark": "One Dark Pro"
   },
-  "buffer_font_size": 18.0,
+  "buffer_font_size": 13.0,
   "buffer_font_features": {
     "calt": true,
     "liga": true
@@ -44,7 +44,7 @@
   "auto_save": "on",
   "terminal": {
     "font_family": "MesloLGS NF",
-    "font_size": 18
+    "font_size": 12
   },
   "default_dock_anchor": "expanded",
   "assistant": {
@@ -89,6 +89,15 @@
     "file_icons": true
   },
   "lsp": {
+    "eslint": {
+      "enabled": true
+    },
+    "typescript": {
+      "enabled": true
+    },
+    "javascript": {
+      "enabled": true
+    },
     "solargraph": {
       "settings": {
         "use_bundler": false
@@ -99,17 +108,24 @@
       }
     },
     "phpactor": {
+      "command": "~/.local/bin/phpactor",
       "initialization_options": {
-        "language_server_phpstan.enabled": true,
-        "language_server_psalm.enabled": true,
-        "debug": true,
-        "diagnostics.enable": true
+        "language_server_phpstan.enabled": false,
+        "language_server_psalm.enabled": false,
+        "language_server_worse_reflection.diagnostics.enable": true,
+        "php_code_sniffer.enabled": true,
+        "php_code_sniffer.bin": "/Users/jullweber/.composer/vendor/bin/phpcs",
+        "php_code_sniffer.args": ["--standard=WordPress", "--report=json"]
       }
     }
   },
   "languages": {
     "JavaScript": {
-      "formatter": "prettier"
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
     },
     "TypeScript": {
       "formatter": "prettier"
@@ -145,19 +161,11 @@
     "PHP": {
       "formatter": {
         "external": {
-          "command": "phpcbf",
-          "arguments": ["--standard=WordPress", "-"]
+          "command": "/Users/jullweber/.local/bin/phpcbf-wrapper",
+          "arguments": ["-"]
         }
       },
-      "language_servers": ["phpactor", "!intelephense"],
-      "diagnostic_tools": [
-        {
-          "external": {
-            "command": "phpcs",
-            "arguments": ["--report=json", "--standard=WordPress", "-"]
-          }
-        }
-      ]
+      "language_servers": ["phpactor"]
     },
     "Rust": {
       "formatter": {
@@ -172,7 +180,7 @@
     }
   },
   "active_pane_modifiers": {
-    "inactive_opacity": 0.5
+    "inactive_opacity": 0.95
   },
   "auto_indent_on_paste": false,
   "slash_commands": {
